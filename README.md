@@ -89,9 +89,7 @@ In order to reduce the impact on soil compaction and to allow the robot to adapt
 
 The outer two tracks are long tracks with a ground length of 223.5 mm and a width of 45 mm, equipped with one active wheel, one tensioning wheel and two load-bearing wheels. The middle track is a short track with a ground length of 160 mm and a width of 45 mm, and is equipped with four load-bearing wheels. By reviewing the relevant literature, we calculated the radius and spacing of the active wheel, tensioner wheel and load-bearing wheel. Under the size limitation, we selected the optimal size and spacing.
 
-
-
-<img src="D:\OneDrive - zju.edu.cn\Univ Resourse\Junior-2\2021 ASABE\2021-ASABE-Robotics-Competition\assets\image-20230301174159705.png" alt="image-20230301174159705" style="zoom:33%;" /><img src="D:\OneDrive - zju.edu.cn\Univ Resourse\Junior-2\2021 ASABE\2021-ASABE-Robotics-Competition\assets\image-20230301174208478.png" alt="image-20230301174208478" style="zoom:33%;" />
+<img src=".\assets\image-20230301174159705.png" alt="image-20230301174159705" style="zoom:33%;" /><img src=".\assets\image-20230301174208478.png" alt="image-20230301174208478" style="zoom:33%;" />
 
 
 | **Type  of wheel**  | **Radius** |
@@ -142,7 +140,7 @@ As shown in Figure 7-2, the robot sends and receives the infrared signal reflect
 
 
 
-![image-20230301174818340](.\assets\image-20230301174818340.png)
+<img src=".\assets\image-20230301174818340.png" alt="image-20230301174818340" />
 
 
 
