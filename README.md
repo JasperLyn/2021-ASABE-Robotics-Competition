@@ -4,6 +4,17 @@ This is a repository for a project in **2021 ASABE Robotics Competition**, which
 
 
 
+## Guide
+
+There are four main parts of the robot.
+
++ Mechanical Structure (please refer to `Model`)
++ Circuit Design (please refer to `Circuit Design`)
++ Machine Vision (please refer to `src`)
++ Control (please refer to `src`)
+
+
+
 ## Video Presentation
 
 [Team Qizhen Lakers- 2nd Place (Best Electronic Presentation) in the 2021 ASABE Robotics Competition](https://www.youtube.com/watch?v=8VvXFQ61o2o&t=6s)
@@ -32,21 +43,7 @@ In the design of robot, we are committed to assure better performance, stronger 
 
 
 
-## Approach and Originality
-
-### Approach
-
-#### Hardware
-
-For farm work machinery, the pressure of the robot on the farm is proportional to the degree of damage to the farm by the robot. Smaller pressure is conducive to actual production and application. Therefore, we adopt a crawler structure with stepper motors for driving to obtain the maximum contact area under the same quality, thereby reducing the pressure of the vehicle on the ground as much as possible. In order to stretch the robot from a smaller size to a higher height to obtain the largest possible field of view with higher adjustability, we used a mechanical structure with a rod group and slide rails, allowing the mechanism to be fully expanded, and a wide-angle camera to obtain a wider field of view. We use a lithium battery with an output voltage of 16V to power the Raspberry Pi through the UBEC module, and a voltage regulator module to power and control various electronic components with different operating voltages.
-
-#### Software
-
-In actual production, most agricultural operation robots can only achieve unilateral operation, which reduces the operation efficiency and increases the time cost. We planned to use a 4th generation Raspberry Pi with 2GB RAM as not only the processor but also the main controller. The Raspberry Pi is connected to all electronic devices on the robot through voltage regulator modules and USB interfaces. For recognition and control tasks, the Raspberry Pi handles them separately through its multi-threaded processing capability and our robot has bilateral simultaneous recognition capability. The Raspberry Pi extends the combined linkage mechanism through the servo and receives the signals returned by the bilateral planks through the infrared sensors for tracing. Finally, the Raspberry Pi transmits the recognition result to a dedicated server computer through the wireless transmission module.
-
-#### Conclusion of Approach
-
-Overall, our robot controls all the electronic components on the robot through the Raspberry Pi. The Raspberry Pi drives stepper motors and servo, processes signals from infrared sensors through GPIO pins for tracing, connects to camera through USB port to process images captured by the camera, and uploads recognition results to a dedicated server computer through a wireless transmission module.
+## Originality
 
 ### Originality
 
@@ -107,42 +104,33 @@ The outer two tracks are long tracks with a ground length of 223.5 mm and a widt
 
 To simplify the actuator, we use a slide rail and a single-degree-of-freedom extension mechanism with multiple links to extend the camera for detection. The multi-stage linkage is articulated by screws and lock nuts, connected to the slide rail by slider connectors, and uses bearings at some of the connections to reduce frictional resistance, and rotates, lifts, and extends under the drive of the servo. As shown in Figure 5-5 and Figure 5-6, with the rational design of 4 connecting rods on each side (8 in total on both sides), we achieved to expand the robot from the initial size of 300 mm × 209.2 mm × 292.5 mm to 300 mm × 440 mm × 528 mm.
 
-<img src=".\assets\image-20230301174502639.png" alt="image-20230301174502639"  /><img src=".\assets\image-20230301174505633.png" alt="image-20230301174505633"  />
-
-<img src=".\assets\image-20230301174512629.png" alt="image-20230301174512629"  /><img src=".\assets\image-20230301174520999.png" alt="image-20230301174520999"  />
-
-<img src=".\assets\image-20230301174550902.png" alt="image-20230301174550902" style="zoom:33%;" /><img src=".\assets\image-20230301174553774.png" alt="image-20230301174553774" style="zoom:33%;" />
+<img src=".\assets\image-20230301174502639.png" alt="image-20230301174502639" style="zoom:50%;" /><img src=".\assets\image-20230301174505633.png" alt="image-20230301174505633" style="zoom:50%;" />
 
 
 
+<img src=".\assets\image-20230301174512629.png" alt="image-20230301174512629" style="zoom:50%;" /><img src=".\assets\image-20230301174520999.png" alt="image-20230301174520999" style="zoom:50%;" />
 
 
 
-![image-20230301174559613](.\assets\image-20230301174559613.png)
-
-![image-20230301174603078](.\assets\image-20230301174603078.png)
-
-![image-20230301174610626](.\assets\image-20230301174610626.png)
-
-![image-20230301174616971](.\assets\image-20230301174616971.png)
+<img src=".\assets\image-20230301174550902.png" alt="image-20230301174550902" style="zoom: 50%;" /><img src=".\assets\image-20230301174553774.png" alt="image-20230301174553774" style="zoom: 50%;" />
 
 
 
-![image-20230301174620529](.\assets\image-20230301174620529.png)
+<img src=".\assets\image-20230301174559613.png" alt="image-20230301174559613" style="zoom:50%;" /><img src=".\assets\image-20230301174603078.png" alt="image-20230301174603078" style="zoom:50%;" />
 
 
 
-![image-20230301174623337](.\assets\image-20230301174623337.png)
+<img src=".\assets\image-20230301174610626.png" alt="image-20230301174610626" style="zoom:50%;" /><img src=".\assets\image-20230301174616971.png" alt="image-20230301174616971" style="zoom:50%;" />
+
+
+
+<img src=".\assets\image-20230301174620529.png" alt="image-20230301174620529" style="zoom:50%;" /><img src=".\assets\image-20230301174623337.png" alt="image-20230301174623337" style="zoom:50%;" />
 
 ### Adjustable Field of View
 
 In order to facilitate the adjustment of the camera view, we designed a camera connector adjustable in angle.
 
-![image-20230301174648708](.\assets\image-20230301174648708.png)
-
-
-
-![image-20230301174651642](.\assets\image-20230301174651642.png)
+<img src=".\assets\image-20230301174648708.png" alt="image-20230301174648708" style="zoom:50%;" /><img src=".\assets\image-20230301174651642.png" alt="image-20230301174651642" style="zoom:50%;" />
 
 
 
@@ -150,7 +138,7 @@ In order to facilitate the adjustment of the camera view, we designed a camera c
 
 As shown in Figure 7-2, the robot sends and receives the infrared signal reflected back from the wooden board through two infrared sensors installed between the active and load-bearing wheels on the outer track to determine the position of the site it is in, and adjusts its direction by controlling the differential rotation of stepper motors through Raspberry Pi to ensure that the robot can achieve a straight line in the site along the path as shown in Figure 7-3 to provide the best position for detection.
 
-![image-20230301174808588](.\assets\image-20230301174808588.png)
+<img src=".\assets\image-20230301174808588.png" alt="image-20230301174808588" style="zoom:50%;" />
 
 
 
@@ -158,43 +146,40 @@ As shown in Figure 7-2, the robot sends and receives the infrared signal reflect
 
 
 
-### Machine Vision
+## Machine Vision
 
-#### Holder detection
+### Holder detection
 
 After the robot starts to run, it first identifies the holder. We use the color and shape characteristics of the holder to match the data obtained from the camera, and when the camera moves to the top of the holder, we save the image acquired by the camera instantly for subsequent processing, and get the coordinate information of the holder center.
 
-![image-20230301174913928](.\assets\image-20230301174913928.png)
+<img src=".\assets\image-20230301174913928.png" alt="image-20230301174913928" style="zoom:50%;" /><img src=".\assets\image-20230301174917106.png" alt="image-20230301174917106" style="zoom:50%;" />
 
-![image-20230301174917106](.\assets\image-20230301174917106.png)
-
-
-
-#### Leaf detection
+### Leaf detection
 
 After getting the image directly above the plant, the colors in the image are extracted using the green, yellow and white thresholds, respectively. The filtered images of each color channel are filtered to obtain images with smoother borders, and the area and shape parameters of the continuous areas in them are calculated, while the noisy parts with obviously small areas or narrow shapes are filtered. The image of each color channel is processed as mentioned above to get a grayscale image containing only leaves, and the leaves of each color in it are counted in order to store the number of corresponding color leaves.
 
-![image-20230301174928133](.\assets\image-20230301174928133.png)
+<img src=".\assets\image-20230301174928133.png" alt="image-20230301174928133" style="zoom:50%;" /><img src=".\assets\image-20230301174932149.png" alt="image-20230301174932149" style="zoom:50%;" />
 
-![image-20230301174932149](.\assets\image-20230301174932149.png)
-
-#### Flower detection
+### Flower detection
 
 In particular, the results after the white threshold extraction in the previous session are re-processed with filtering and area calculation, and graphical matching is added to obtain the detection results of white flowers.
 
-![image-20230301174937691](.\assets\image-20230301174937691.png)
+<img src=".\assets\image-20230301174937691.png" alt="image-20230301174937691" style="zoom:50%;" /><img src=".\assets\image-20230301174940689.png" alt="image-20230301174940689" style="zoom:50%;" />
 
-![image-20230301174940689](.\assets\image-20230301174940689.png)
-
-
-
-#### Stem detection
+### Stem detection
 
 Similarly, we use the characteristic values of stem color to filter specific locations in the image to obtain a grayscale image of the stems for counting the stems. 
 
+<img src=".\assets\image-20230301174947565.png" alt="image-20230301174947565" style="zoom:50%;" /><img src=".\assets\image-20230301174951079.png" alt="image-20230301174951079" style="zoom:50%;" />
 
 
-![image-20230301174947565](.\assets\image-20230301174947565.png)
 
-![image-20230301174951079](.\assets\image-20230301174951079.png)
+## Logic flowchart of detection
 
+<img src=".\assets\image-20230301191851505.png" alt="image-20230301191851505" />
+
+
+
+## Logic flowchart of main program
+
+<img src=".\assets\image-20230301191758130.png" alt="image-20230301191758130" />
