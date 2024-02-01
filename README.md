@@ -16,8 +16,7 @@ There are four main parts of the robot.
 
 
 ## Video Presentation
-
-[Team Qizhen Lakers- 2nd Place (Best Electronic Presentation) in the 2021 ASABE Robotics Competition](https://www.youtube.com/watch?v=8VvXFQ61o2o&t=6s)
+[![Team Qizhen Lakers- 2nd Place (Best Electronic Presentation) in the 2021 ASABE Robotics Competition](https://res.cloudinary.com/marcomontalbano/image/upload/v1706756617/video_to_markdown/images/youtube--8VvXFQ61o2o-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=8VvXFQ61o2o "Team Qizhen Lakers- 2nd Place (Best Electronic Presentation) in the 2021 ASABE Robotics Competition")
 
 
 
